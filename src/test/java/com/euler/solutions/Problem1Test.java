@@ -1,14 +1,24 @@
 package com.euler.solutions;
 
-import static com.euler.solutions.Problem1.calculate;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 import org.junit.Test;
 
 public class Problem1Test {
+	private Problem1 problem1 = new Problem1();
+
 	@Test public void
-	should_calculate_the_sum_of_all_multiples_of_3_and_5_below_1000() {
-		assertThat(calculate(1000, 3, 5), is(0));
+	calculates_the_sum_of_all_multiples_of_3_and_5_below_10_to_be_23() {
+		int result = problem1.calculate(10, 3, 5);
+
+		assertThat(result, is(23));
+	}
+
+	@Test public void
+	calculates_the_sum_of_all_multiples_of_3_and_5_below_1000_to_be_233168() {
+		int result = problem1.calculate(1000, 3, 5);
+
+		assertThat(result, is(233168));
 	}
 }
