@@ -14,7 +14,7 @@ public class Problem3Test {
 	}
 
 	@Test public void
-	determines_that_29_is_not_a_prime_number() {
+	determines_that_29_is_a_prime_number() {
 		assertThat(problem3.isPrime(29), is(true));
 	}
 
