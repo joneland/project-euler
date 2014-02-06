@@ -4,26 +4,26 @@ public class Problem3 {
 	public int calculateLargestPrimeFactorOf(long number) {
 		int largestPrimeFactor = 0;
 
-		for (int i = 2; i <= number; i++) {
-			if (isPrime(i) && dividesIntoNaturalNumber(number, i)) {
-				largestPrimeFactor = i;
-				number = number / i;
+		for (int currentInteger = 2; currentInteger <= number; currentInteger++) {
+			if (isPrime(currentInteger) && dividesIntoNaturalNumber(number, currentInteger)) {
+				largestPrimeFactor = currentInteger;
+				number = number / currentInteger;
 			}
 		}
 
 		return largestPrimeFactor;
 	}
 
-	public boolean isPrime(long number) {
-		for(long i = number - 1; i >= 2; i--) {
-			if(number % i == 0) {
+	public boolean isPrime(int number) {
+		for(int currentInteger = number - 1; currentInteger >= 2; currentInteger--) {
+			if(dividesIntoNaturalNumber(number, currentInteger)) {
 				return false;
 			}
 		}
 		return true;
 	}
 
-	private boolean dividesIntoNaturalNumber(long number, int i) {
-		return number % i == 0;
+	private boolean dividesIntoNaturalNumber(long integer, int divisor) {
+		return integer % divisor == 0;
 	}
 }
