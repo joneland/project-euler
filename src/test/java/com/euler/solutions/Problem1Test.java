@@ -14,11 +14,4 @@ public class Problem1Test {
 
 		assertThat(result, is(23));
 	}
-
-	@Test public void
-	calculates_the_sum_of_all_multiples_of_3_and_5_below_1000_to_be_233168() {
-		int result = problem1.calculate(1000, 3, 5);
-
-		assertThat(result, is(233168));
-	}
 }

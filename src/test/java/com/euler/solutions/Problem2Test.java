@@ -14,11 +14,4 @@ public class Problem2Test {
 
 		assertThat(result, is(44));
 	}
-
-	@Test public void
-	calculates_the_sum_of_even_valed_terms_that_do_not_exceed_4000000_to_be_44() {
-		int result = problem2.calculateSumOfEvenValuedTermsThatDoNotExceed(4000000);
-
-		assertThat(result, is(4613732));
-	}
 }
