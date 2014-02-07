@@ -3,22 +3,19 @@ package com.euler.solutions;
 public class Problem5 {
 	public int calculateSmallestNumberEvenlyDivisibleByAllNumbersBetween(int lowerBoundary, int upperBoundary) {
 		int smallestNumber = upperBoundary;
-		boolean tryNextNumber = true;
 
-		while (tryNextNumber) {
-			for (int divisor = lowerBoundary; divisor <= upperBoundary; divisor++) {
-				if (isEvenlyDivisible(smallestNumber, divisor) && divisor == upperBoundary) {
-					tryNextNumber = false;
-				}
+		for (int divisor = lowerBoundary; divisor <= upperBoundary; divisor++) {
+			if (isEvenlyDivisible(smallestNumber, divisor) && divisor == upperBoundary) {
+				break;
+			}
 
-				if (isEvenlyDivisible(smallestNumber, divisor) && divisor < upperBoundary) {
-					continue;
-				}
+			if (isEvenlyDivisible(smallestNumber, divisor) && divisor < upperBoundary) {
+				continue;
+			}
 
-				if (!isEvenlyDivisible(smallestNumber, divisor)) {
-					smallestNumber++;
-					break;
-				}
+			if (!isEvenlyDivisible(smallestNumber, divisor)) {
+				smallestNumber++;
+				divisor = lowerBoundary;
 			}
 		}
 
