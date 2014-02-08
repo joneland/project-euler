@@ -12,6 +12,6 @@ public class Problem6Test {
 	calculates_the_sum_square_difference_of_the_1_to_10_to_be_2640() {
 		int result = problem6.calculateSumSquareDifferenceOfOneTo(10);
 
-	assertThat(result, is(2640));
+		assertThat(result, is(2640));
 	}
 }
