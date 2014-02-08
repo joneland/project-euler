@@ -14,8 +14,8 @@ public class Problem6 {
 	private int calculateSumOfSquareUpTo(int upperBoundary) {
 		int total = 0;
 
-		for (int i = 1; i <= upperBoundary; i++) {
-			total = checkedAdd(total, checkedMultiply(i, i));
+		for (int number = 1; number <= upperBoundary; number++) {
+			total = checkedAdd(total, checkedMultiply(number, number));
 		}
 
 		return total;
@@ -24,8 +24,8 @@ public class Problem6 {
 	private int calculateSquareOfSumsUpTo(int upperBoundary) {
 		int total = 0;
 
-		for(int i = 1; i <= upperBoundary; i++) {
-			total = checkedAdd(total, i);
+		for(int number = 1; number <= upperBoundary; number++) {
+			total = checkedAdd(total, number);
 		}
 
 		return checkedMultiply(total, total);
