@@ -1,7 +1,7 @@
 package com.euler.solutions;
 
+import static com.euler.common.DivisibilityChecker.isEvenlyDivisible;
 import static com.euler.common.PrimeNumbers.isPrime;
-import static com.google.common.math.LongMath.mod;
 
 public class Problem3 {
 	private static final int SMALLEST_PRIME_NUMBER = 2;
@@ -10,7 +10,7 @@ public class Problem3 {
 		int largestPrimeFactor = 0;
 
 		for (int currentInteger = SMALLEST_PRIME_NUMBER; currentInteger <= number; currentInteger++) {
-			if (isPrime(currentInteger) && mod(number, currentInteger) == 0) {
+			if (isPrime(currentInteger) && isEvenlyDivisible(number, currentInteger)) {
 				largestPrimeFactor = currentInteger;
 				number = number / currentInteger;
 			}
