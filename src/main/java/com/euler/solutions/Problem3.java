@@ -1,26 +1,21 @@
 package com.euler.solutions;
 
+import com.euler.common.PrimeNumbers;
+
 public class Problem3 {
+	private PrimeNumbers primeNumbers = new PrimeNumbers();
+
 	public int calculateLargestPrimeFactorOf(long number) {
 		int largestPrimeFactor = 0;
 
 		for (int currentInteger = 2; currentInteger <= number; currentInteger++) {
-			if (isPrime(currentInteger) && dividesIntoNaturalNumber(number, currentInteger)) {
+			if (primeNumbers.isPrime(currentInteger) && dividesIntoNaturalNumber(number, currentInteger)) {
 				largestPrimeFactor = currentInteger;
 				number = number / currentInteger;
 			}
 		}
 
 		return largestPrimeFactor;
-	}
-
-	public boolean isPrime(int number) {
-		for(int currentInteger = number - 1; currentInteger >= 2; currentInteger--) {
-			if(dividesIntoNaturalNumber(number, currentInteger)) {
-				return false;
-			}
-		}
-		return true;
 	}
 
 	private boolean dividesIntoNaturalNumber(long integer, int divisor) {

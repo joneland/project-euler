@@ -1,8 +1,12 @@
 package com.euler.solutions;
 
+import com.euler.common.PrimeNumbers;
+
 
 public class Problem7 {
 	private static final int LOWEST_PRIME_NUMBER = 2;
+
+	private PrimeNumbers primeNumbers = new PrimeNumbers();
 
 	public int calculatePrimeNumberAtIndex(int index) {
 		int currentNumber = LOWEST_PRIME_NUMBER;
@@ -10,7 +14,7 @@ public class Problem7 {
 		int primeCount = 0;
 
 		while (primeCount != index) {
-			if (isPrime(currentNumber)) {
+			if (primeNumbers.isPrime(currentNumber)) {
 				latestPrimeNumber = currentNumber;
 				primeCount++;
 			}
@@ -18,18 +22,5 @@ public class Problem7 {
 		}
 
 		return latestPrimeNumber;
-	}
-
-	public boolean isPrime(int number) {
-		for(int currentInteger = number - 1; currentInteger >= 2; currentInteger--) {
-			if(dividesWithZeroRemainder(number, currentInteger)) {
-				return false;
-			}
-		}
-		return true;
-	}
-
-	private boolean dividesWithZeroRemainder(long integer, int divisor) {
-		return integer % divisor == 0;
 	}
 }
