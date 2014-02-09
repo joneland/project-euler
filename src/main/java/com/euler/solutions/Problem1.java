@@ -1,6 +1,7 @@
 package com.euler.solutions;
 
 import static com.google.common.math.IntMath.checkedAdd;
+import static com.google.common.math.IntMath.mod;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -20,7 +21,7 @@ public class Problem1 {
 
 	private boolean currentIntegerIsDivisibleByAnyTargetInteger(int currentInteger, int[] targetIntegers) {
 		for (int targetInteger : targetIntegers) {
-			if (currentInteger % targetInteger == 0) {
+			if (mod(currentInteger, targetInteger) == 0) {
 				return true;
 			}
 		}

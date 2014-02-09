@@ -1,6 +1,7 @@
 package com.euler.solutions;
 
 import static com.google.common.math.IntMath.checkedAdd;
+import static com.google.common.math.IntMath.mod;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,7 +49,7 @@ public class Problem2 {
 	private int sumOfEvenValuedTermsIn(List<Integer> fibonacciSequence) {
 		int result = 0;
 		for (int term : fibonacciSequence) {
-			if (term % 2 == 0) {
+			if (mod(term, 2) == 0) {
 				result = checkedAdd(result, term);
 			}
 		}
