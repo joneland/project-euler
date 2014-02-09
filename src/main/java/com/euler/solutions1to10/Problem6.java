@@ -1,4 +1,4 @@
-package com.euler.solutions;
+package com.euler.solutions1to10;
 
 import static com.google.common.math.IntMath.checkedAdd;
 import static com.google.common.math.IntMath.checkedMultiply;

@@ -1,4 +1,4 @@
-package com.euler.solutions;
+package com.euler.solutions1to10;
 
 import static com.euler.common.PrimeNumbers.isPrime;
 

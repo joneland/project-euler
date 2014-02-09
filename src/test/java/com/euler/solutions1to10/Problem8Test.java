@@ -1,9 +1,11 @@
-package com.euler.solutions;
+package com.euler.solutions1to10;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 import org.junit.Test;
+
+import com.euler.solutions1to10.Problem8;
 
 public class Problem8Test {
 	private Problem8 problem8 = new Problem8();
