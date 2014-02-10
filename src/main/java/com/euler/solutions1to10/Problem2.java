@@ -1,14 +1,14 @@
 package com.euler.solutions1to10;
 
 import static com.euler.common.DivisibilityChecker.isEvenlyDivisible;
+import static com.google.common.collect.Lists.newArrayList;
 import static com.google.common.math.IntMath.checkedAdd;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Problem2 {
 	public int calculateSumOfEvenValuedTermsThatDoNotExceed(int upperBoundary) {
-		List<Integer> fibonacciSequence = initialiseFibonacciSequence();
+		List<Integer> fibonacciSequence = newArrayList(1, 2);
 
 		while (true) {
 			int nextTerm = calculateNextTermIn(fibonacciSequence);
@@ -37,13 +37,6 @@ public class Problem2 {
 
 	private int secondToLastTermIn(List<Integer> fibonacciSequence) {
 		return fibonacciSequence.size() - 2;
-	}
-
-	private List<Integer> initialiseFibonacciSequence() {
-		List<Integer> fibonacciSequence = new ArrayList<Integer>();
-		fibonacciSequence.add(1);
-		fibonacciSequence.add(2);
-		return fibonacciSequence;
 	}
 
 	private int sumOfEvenValuedTermsIn(List<Integer> fibonacciSequence) {
